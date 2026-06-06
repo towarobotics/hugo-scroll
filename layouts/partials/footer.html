@@ -29,6 +29,12 @@
       <section class="copyright">{{ . | safeHTML }}</section>
     {{ end }}
 
+    {{ with .Site.Params.footer_logo }}
+    <section class="copyright" style="margin-top: 1em;">
+      <img src="{{ . | relURL }}" alt="{{ $.Site.Title | default "Site logo" }}" style="height:2em; display:block; margin:0 auto 0.5em;" />
+    </section>
+    {{ end }}
+
     {{ if ne .Site.Params.hidedesignbyline true }}
       <section>
         <a href="https://themes.gohugo.io/hugo-scroll/" target="_blank" rel="noopener">Hugo Scroll</a> template
