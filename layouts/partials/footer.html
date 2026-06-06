@@ -31,7 +31,11 @@
 
     {{ with .Site.Params.footer_logo }}
     <section class="copyright" style="margin-top: 1em;">
-      <img src="{{ . | relURL }}" alt="{{ $.Site.Title | default "Site logo" }}" style="height:2em; display:block; margin:0 auto 0.5em;" />
+      {{ with resources.Get . }}
+      <img src="{{ .RelPermalink }}" alt="{{ $.Site.Title | default "Site logo" }}" style="height:2em; display:block; margin:0 auto 0.5em;" />
+      {{ else }}
+      <img src="{{ $.Site.Params.footer_logo | relURL }}" alt="{{ $.Site.Title | default "Site logo" }}" style="height:2em; display:block; margin:0 auto 0.5em;" />
+      {{ end }}
     </section>
     {{ end }}
 
