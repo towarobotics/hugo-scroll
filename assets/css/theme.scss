@@ -97,8 +97,8 @@ body {
 
   a.btn {
     text-decoration: none;
-    background-color: var(--highlight);
-    color: var(--highlight-contrast);
+    background-color: var(--highlight-inverse);
+    color: var(--highlight-inverse-contrast);
     border-radius: 6px;
     -webkit-border-radius: 6px;
     display: inline-block;
@@ -114,8 +114,8 @@ body {
     font-weight: lighter;
 
     &:hover {
-      color: var(--highlight-inverse-contrast);
-      background-color: var(--highlight-inverse);
+      color: var(--highlight-contrast);
+      background-color: var(--highlight);
     }
   }
 
